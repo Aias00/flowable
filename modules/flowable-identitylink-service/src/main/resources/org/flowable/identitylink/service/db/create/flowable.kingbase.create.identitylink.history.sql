@@ -1,0 +1,19 @@
+CREATE TABLE ACT_HI_IDENTITYLINK (
+                                     ID_ VARCHAR(64) NOT NULL,
+                                     GROUP_ID_ VARCHAR(255),
+                                     TYPE_ VARCHAR(255),
+                                     USER_ID_ VARCHAR(255),
+                                     TASK_ID_ VARCHAR(64),
+                                     CREATE_TIME_ TIMESTAMP,
+                                     PROC_INST_ID_ VARCHAR(64),
+                                     SCOPE_ID_ VARCHAR(255),
+                                     SUB_SCOPE_ID_ VARCHAR(255),
+                                     SCOPE_TYPE_ VARCHAR(255),
+                                     SCOPE_DEFINITION_ID_ VARCHAR(255)
+);
+CREATE INDEX ACT_IDX_HI_IDENT_LNK_PROCINST ON ACT_HI_IDENTITYLINK (PROC_INST_ID_);
+CREATE INDEX ACT_IDX_HI_IDENT_LNK_SCOPE ON ACT_HI_IDENTITYLINK (SCOPE_ID_,SCOPE_TYPE_);
+CREATE INDEX ACT_IDX_HI_IDENT_LNK_SCOPE_DEF ON ACT_HI_IDENTITYLINK (SCOPE_DEFINITION_ID_,SCOPE_TYPE_);
+CREATE INDEX ACT_IDX_HI_IDENT_LNK_SUB_SCOPE ON ACT_HI_IDENTITYLINK (SUB_SCOPE_ID_,SCOPE_TYPE_);
+CREATE INDEX ACT_IDX_HI_IDENT_LNK_TASK ON ACT_HI_IDENTITYLINK (TASK_ID_);
+CREATE INDEX ACT_IDX_HI_IDENT_LNK_USER ON ACT_HI_IDENTITYLINK (USER_ID_);
