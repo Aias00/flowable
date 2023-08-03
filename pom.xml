@@ -8,7 +8,7 @@
 	<artifactId>flowable-root</artifactId>
 
 	<packaging>pom</packaging>
-	<version>6.6.0</version>
+	<version>6.6.2-workflow</version>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<distributionManagementSnapshotsUrl>https://oss.sonatype.org/content/repositories/snapshots/</distributionManagementSnapshotsUrl>
@@ -975,7 +975,7 @@
 			<dependency>
 				<groupId>org.liquibase</groupId>
 				<artifactId>liquibase-core</artifactId>
-				<version>3.8.0</version>
+				<version>4.23.0</version>
 				<exclusions>
 					<exclusion>
 						<groupId>ch.qos.logback</groupId>
@@ -1657,16 +1657,16 @@
 				<module>modules/flowable-cxf</module>
 				<module>modules/flowable-osgi</module>
 				<module>modules/flowable-camel</module>
-				<module>modules/flowable-mule</module>
+<!--				<module>modules/flowable-mule</module>-->
 				<module>modules/flowable-http</module>
 				<module>modules/flowable-http-common</module>
-				<module>modules/flowable-cdi</module>
-				<module>modules/flowable-camel-cdi</module>
+<!--				<module>modules/flowable-cdi</module>-->
+<!--				<module>modules/flowable-camel-cdi</module>-->
 				<module>modules/flowable-ldap</module>
 				<module>modules/flowable-ldap-configurator</module>
 				<module>modules/flowable-jmx</module>
 				<module>modules/flowable-jms-spring-executor</module>
-				<module>modules/flowable-crystalball</module>
+<!--				<module>modules/flowable-crystalball</module>-->
 				<module>tooling/archetypes/flowable-archetype-unittest</module>
 			</modules>
 			<build>
@@ -2008,16 +2008,17 @@
 		<connection>scm:git:git@github.com:flowable/flowable-engine.git</connection>
 		<developerConnection>scm:git:git@github.com:flowable/flowable-engine.git</developerConnection>
 	</scm>
+
 	<distributionManagement>
-		<snapshotRepository>
-			<id>sonatype-nexus-snapshots</id>
-			<name>Sonatype Nexus Snapshots</name>
-			<url>${distributionManagementSnapshotsUrl}</url>
-		</snapshotRepository>
 		<repository>
-			<id>sonatype-nexus-staging</id>
-			<name>Nexus Release Repository</name>
-			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+			<!-- 这里的ID要和setting的id一致 -->
+			<id>releases</id>
+			<url>http://10.126.138.142:8081/nexus/content/repositories/releases</url>
 		</repository>
+		<!--这是打成快照版本的配置，如果不用这个snapshotRepository标签，打包失败，会报权限问题 -->
+		<snapshotRepository>
+			<id>snapshots</id>
+			<url>http://10.126.138.142:8081/nexus/content/repositories/snapshots</url>
+		</snapshotRepository>
 	</distributionManagement>
 </project>

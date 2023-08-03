@@ -354,9 +354,11 @@ public abstract class AbstractEngineConfiguration {
     public static final String DATABASE_TYPE_DB2 = "db2";
     public static final String DATABASE_TYPE_COCKROACHDB = "cockroachdb";
     public static final String DATABASE_TYPE_KINGBASE = "kingbase";
+    public static final String DATABASE_TYPE_DAMENG = "dameng";
 
     public static Properties getDefaultDatabaseTypeMappings() {
         Properties databaseTypeMappings = new Properties();
+        databaseTypeMappings.setProperty("DM DBMS", DATABASE_TYPE_DAMENG);
         databaseTypeMappings.setProperty("KingbaseES", DATABASE_TYPE_KINGBASE);
         databaseTypeMappings.setProperty("H2", DATABASE_TYPE_H2);
         databaseTypeMappings.setProperty("HSQL Database Engine", DATABASE_TYPE_HSQL);

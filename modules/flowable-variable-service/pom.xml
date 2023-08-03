@@ -10,7 +10,7 @@
         <groupId>org.flowable</groupId>
         <artifactId>flowable-root</artifactId>
         <relativePath>../..</relativePath>
-        <version>6.6.0</version>
+        <version>6.6.2-workflow</version>
     </parent>
 
     <dependencies>
@@ -165,5 +165,16 @@
             </plugins>
         </pluginManagement>
     </build>
-
+    <distributionManagement>
+        <repository>
+            <!-- 这里的ID要和setting的id一致 -->
+            <id>releases</id>
+            <url>http://10.126.138.142:8081/nexus/content/repositories/releases</url>
+        </repository>
+        <!--这是打成快照版本的配置，如果不用这个snapshotRepository标签，打包失败，会报权限问题 -->
+        <snapshotRepository>
+            <id>snapshots</id>
+            <url>http://10.126.138.142:8081/nexus/content/repositories/snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
 </project>

@@ -66,7 +66,7 @@ Add the following to your *pom.xml* file:
       <dependency>
         <groupId>org.flowable</groupId>
         <artifactId>flowable-engine</artifactId>
-        <version>6.6.0</version>
+        <version>6.6.2-workflow</version>
       </dependency>
       <dependency>
         <groupId>com.h2database</groupId>
