@@ -1617,9 +1617,9 @@
                 <module>modules/flowable-idm-spring</module>
                 <module>modules/flowable-idm-spring-configurator</module>
                 <module>modules/flowable-idm-rest</module>
-                <module>modules/flowable-event-registry-spring</module>
-                <module>modules/flowable-event-registry-spring-configurator</module>
-                <module>modules/flowable-event-registry-rest</module>
+<!--                <module>modules/flowable-event-registry-spring</module>-->
+<!--                <module>modules/flowable-event-registry-spring-configurator</module>-->
+<!--                <module>modules/flowable-event-registry-rest</module>-->
                 <module>modules/flowable-content-engine</module>
                 <module>modules/flowable-content-engine-configurator</module>
                 <module>modules/flowable-content-spring</module>

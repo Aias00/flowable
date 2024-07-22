@@ -251,20 +251,20 @@ public class EventRegistryAutoConfiguration extends AbstractSpringEngineAutoConf
         }
     }
 
-    @Configuration(proxyBeanMethods = false)
-    @ConditionalOnBean(KafkaOperations.class)
-    public static class EventRegistryKafkaConfiguration {
-
-        @Bean("kafkaChannelDefinitionProcessor")
-        @ConditionalOnMissingBean(name = "kafkaChannelDefinitionProcessor")
-        public KafkaChannelDefinitionProcessor kafkaChannelDefinitionProcessor(KafkaListenerEndpointRegistry endpointRegistry,
-            KafkaOperations<Object, Object> kafkaOperations) {
-            KafkaChannelDefinitionProcessor kafkaChannelDefinitionProcessor = new KafkaChannelDefinitionProcessor();
-            kafkaChannelDefinitionProcessor.setEndpointRegistry(endpointRegistry);
-            kafkaChannelDefinitionProcessor.setKafkaOperations(kafkaOperations);
-
-            return kafkaChannelDefinitionProcessor;
-        }
-    }
+//    @Configuration(proxyBeanMethods = false)
+//    @ConditionalOnBean(KafkaOperations.class)
+//    public static class EventRegistryKafkaConfiguration {
+//
+//        @Bean("kafkaChannelDefinitionProcessor")
+//        @ConditionalOnMissingBean(name = "kafkaChannelDefinitionProcessor")
+//        public KafkaChannelDefinitionProcessor kafkaChannelDefinitionProcessor(KafkaListenerEndpointRegistry endpointRegistry,
+//            KafkaOperations<Object, Object> kafkaOperations) {
+//            KafkaChannelDefinitionProcessor kafkaChannelDefinitionProcessor = new KafkaChannelDefinitionProcessor();
+//            kafkaChannelDefinitionProcessor.setEndpointRegistry(endpointRegistry);
+//            kafkaChannelDefinitionProcessor.setKafkaOperations(kafkaOperations);
+//
+//            return kafkaChannelDefinitionProcessor;
+//        }
+//    }
 }
 
